@@ -17,6 +17,10 @@ class Users extends Component {
         const {onDelete, name} = this.props;
 
         onDelete(name);
+        fetch(`http://localhost:3000/users/${this.props.id}`, {
+            method: 'DELETE'
+        }).then(resp => resp.json());
+        // .then(data => console.log(data));
     }
 
     onEdit() {
@@ -27,6 +31,14 @@ class Users extends Component {
 
     onEditSubmit(e) {
         e.preventDefault();
+        fetch(`http://localhost:3000/users/${this.props.id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8'
+            },
+            body: JSON.stringify({name: this.nameInput.value, username: this.usernameInput.value})
+        }).then(resp => resp.json());
+            // .then(data => console.log(data));
 
         this.props.onEditSubmit(this.nameInput.value, this.usernameInput.value, this.props.name);
 

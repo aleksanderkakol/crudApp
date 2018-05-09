@@ -1,5 +1,5 @@
 {
-  "posts": [
+  "users": [
     {
       "id": 1,
       "name": "Leanne Graham",
@@ -229,11 +229,6 @@
         "catchPhrase": "Centralized empowering task-force",
         "bs": "target end-to-end models"
       }
-    },
-    {
-      "name": "Bernard",
-      "username": "Dzik",
-      "id": 11
     }
   ]
 }

@@ -18,7 +18,7 @@ class App extends Component {
   }
 
   componentWillMount(){
-    fetch('http://localhost:3000/posts')
+    fetch('http://localhost:3000/users')
         .then(resp => resp.json())
         .then(resp => this.setState({
                 name: resp
@@ -53,15 +53,14 @@ class App extends Component {
   }
 
   onAdd(name, username){
-      fetch('http://localhost:3000/posts', {
+      fetch('http://localhost:3000/users', {
           method: 'POST',
           headers: {
-            'Accept': 'application/json, text/plain, */*',
+              'Accept': 'application/json, text/plain, */*',
               'Content-type': 'application/json'
           },
           body: JSON.stringify({name: name, username: username})
-      }).then(resp => resp.json())
-          .then(data => console.log(data));
+      }).then(resp => resp.json());
 
     const users = this.getUsers();
 
@@ -77,18 +76,19 @@ class App extends Component {
 
   onEditSubmit(name, username, originalName){
     let users = this.getUsers();
-
       users = users.map(user => {
         if (user.name === originalName) {
           user.name = name;
           user.username = username;
         }
+
         return user;
       });
 
       this.setState({
           users
       });
+
   }
 
 

@@ -43,8 +43,8 @@ class App extends Component {
   onDelete(name) {
     const users = this.getUsers();
 
-    const filteresUsers = users.filter(product => {
-      return product.name !== name;
+    const filteresUsers = users.filter(user => {
+      return user.name !== name;
     });
 
       this.setState({
@@ -53,7 +53,18 @@ class App extends Component {
   }
 
   onAdd(name, username){
+      fetch('http://localhost:3000/posts', {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json, text/plain, */*',
+              'Content-type': 'application/json'
+          },
+          body: JSON.stringify({name: name, username: username})
+      }).then(resp => resp.json())
+          .then(data => console.log(data));
+
     const users = this.getUsers();
+
 
     users.push({
         name,
@@ -99,7 +110,7 @@ class App extends Component {
                       />
                   );
               })
-              :  <div>Loading</div>
+              :  <div>No users</div>
           }
       </div>
     );

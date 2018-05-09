@@ -13,6 +13,7 @@ class AddUser extends Component {
 
         this.nameInput.value = '';
         this.usernameInput.value = '';
+
     }
 
     render() {

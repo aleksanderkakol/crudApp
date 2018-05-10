@@ -53,24 +53,24 @@ class Users extends Component {
       const {name, username} = this.props;
 
     return (
-        <div>
+        <div className='users'>
             {this.state.isEdit
                 ? (
-                    <form onSubmit={this.onEditSubmit}>
-                        <input type="text" placeholder='Name' ref={nameInput => this.nameInput = nameInput} defaultValue={name}/>
-                        <input type="text" placeholder='Price' ref={usernameInput => this.usernameInput = usernameInput} defaultValue={username}/>
-                        <button>Save</button>
+                    <form className='form-edit' onSubmit={this.onEditSubmit}>
+                        <input className='form-edit-input' type="text" placeholder='Name' ref={nameInput => this.nameInput = nameInput} defaultValue={name}/>
+                        <input className='form-edit-input' type="text" placeholder='Username' ref={usernameInput => this.usernameInput = usernameInput} defaultValue={username}/>
+                        <button className='form-edit-btn'>Save</button>
                     </form>
                 )
                 :(
-                    <div>
-                        <span>{name}</span>
+                    <div className='users-list'>
+                        <span className='users-list-name'>{name}</span>
                         {` | `}
-                        <span>{username}</span>
+                        <span className='users-list-username'>{username}</span>
                         {` | `}
-                        <button onClick={this.onEdit}>Edit</button>
+                        <button className='users-list-btn-edit' onClick={this.onEdit}>Edit</button>
                         {` | `}
-                        <button onClick={this.onDelete}>Delete</button>
+                        <button className='users-list-btn-delete' onClick={this.onDelete}>Delete</button>
                     </div>
                 )
             }

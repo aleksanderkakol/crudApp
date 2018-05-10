@@ -95,7 +95,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-          <h1>My App</h1>
+          <h1 className="App-title">My App</h1>
         <AddUser
             onAdd={this.onAdd}
         />
@@ -110,7 +110,7 @@ class App extends Component {
                       />
                   );
               })
-              :  <div>No users</div>
+              :  <div className="App">No users</div>
           }
       </div>
     );

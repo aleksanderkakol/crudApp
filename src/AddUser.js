@@ -20,11 +20,11 @@ class AddUser extends Component {
         // const {name, username} = this.props;
 
         return (
-            <form onSubmit={this.onSubmit}>
-                <h3>Add User</h3>
-                <input type="text" placeholder='Name' ref={nameInput => this.nameInput = nameInput}/>
-                <input type="text" placeholder='Username' ref={usernameInput => this.usernameInput = usernameInput}/>
-                <button>Add</button>
+            <form className='form' onSubmit={this.onSubmit}>
+                <h3 className='form-title'>Add User</h3>
+                <input className='form-input' type="text" placeholder='Name' ref={nameInput => this.nameInput = nameInput}/>
+                <input className='form-input' type="text" placeholder='Username' ref={usernameInput => this.usernameInput = usernameInput}/>
+                <button className='form-btn'>Add</button>
                 <hr/>
             </form>
         );

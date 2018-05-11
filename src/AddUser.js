@@ -22,9 +22,9 @@ class AddUser extends Component {
         return (
             <form className='form' onSubmit={this.onSubmit}>
                 <h3 className='form-title'>Add User</h3>
-                <input className='form-input' type="text" placeholder='Name' ref={nameInput => this.nameInput = nameInput}/>
-                <input className='form-input' type="text" placeholder='Username' ref={usernameInput => this.usernameInput = usernameInput}/>
-                <button className='form-btn'>Add</button>
+                <input className='input' type="text" placeholder='Name' ref={nameInput => this.nameInput = nameInput}/>
+                <input className='input' type="text" placeholder='Username' ref={usernameInput => this.usernameInput = usernameInput}/>
+                <button className='form-btn btn'>Add</button>
                 <hr/>
             </form>
         );

@@ -16,7 +16,10 @@
 }
 
 .App-title {
-  font-size: 2em;
+  background-color: #6400F7;
+  margin: 0;
+  text-align: left;
+  padding: 10px;
 }
 
 .App-intro {
@@ -26,4 +29,65 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+h2{
+  text-align: left;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.list{
+  border: 1px solid black;
+  border-bottom: 0;
+}
+
+.users-list, .form-edit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1px solid black;
+}
+.users-list:hover {
+  background-color: #e3e3e3;
+}
+
+.users-list-name{
+  width: 30%;
+  flex-grow: 1;
+  text-align: left;
+
+}
+.users-list-username{
+  width: 30%;
+  text-align: left;
+
+}
+.btn {
+  padding: 10px;
+  border: 0;
+  background-color: #e3e3e3;
+  flex-grow: 1;
+}
+.form-edit-input {
+  width: 100%;
+}
+.input{
+  flex-grow: 1;
+  margin: 5px;
+  font-size: 1rem;
+}
+.form-edit-btn{
+
+}
+.form-btn {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.btn:hover {
+  background-color: #d1d1d1;
 }

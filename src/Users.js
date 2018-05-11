@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+
 class Users extends Component {
     constructor(props){
         super(props);
@@ -51,30 +52,28 @@ class Users extends Component {
 
   render() {
       const {name, username} = this.props;
-
     return (
         <div className='users'>
             {this.state.isEdit
                 ? (
+                    <div className='form'>
                     <form className='form-edit' onSubmit={this.onEditSubmit}>
-                        <input className='form-edit-input' type="text" placeholder='Name' ref={nameInput => this.nameInput = nameInput} defaultValue={name}/>
-                        <input className='form-edit-input' type="text" placeholder='Username' ref={usernameInput => this.usernameInput = usernameInput} defaultValue={username}/>
-                        <button className='form-edit-btn'>Save</button>
+                        <input className='form-edit-input input' type="text" placeholder='Name' ref={nameInput => this.nameInput = nameInput} defaultValue={name}/>
+                        <input className='form-edit-input input' type="text" placeholder='Username' ref={usernameInput => this.usernameInput = usernameInput} defaultValue={username}/>
+                        <button className='form-edit-btn btn'>Save</button>
                     </form>
+                    </div>
                 )
                 :(
                     <div className='users-list'>
                         <span className='users-list-name'>{name}</span>
-                        {` | `}
                         <span className='users-list-username'>{username}</span>
-                        {` | `}
-                        <button className='users-list-btn-edit' onClick={this.onEdit}>Edit</button>
-                        {` | `}
-                        <button className='users-list-btn-delete' onClick={this.onDelete}>Delete</button>
+                        <button className='users-list-btn-edit btn' onClick={this.onEdit}>Edit</button>
+                        <button className='users-list-btn-delete btn' onClick={this.onDelete}>Delete</button>
                     </div>
                 )
             }
-        </div>
+            </div>
     );
   }
 }

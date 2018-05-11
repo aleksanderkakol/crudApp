@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import Users from './Users'
-import AddUser from './AddUser'
+import Users from './Users';
+import AddUser from './AddUser';
+
 
 class App extends Component {
   constructor(props) {
@@ -10,7 +11,7 @@ class App extends Component {
     this.state = {
       name: []
     };
-    // console.log(this.state.products)
+    // console.log(this.state.name)
 
     this.onDelete = this.onDelete.bind(this);
     this.onAdd = this.onAdd.bind(this);
@@ -35,7 +36,6 @@ class App extends Component {
   }
 
   getUsers() {
-
     return this.state.name
 
   }
@@ -96,9 +96,12 @@ class App extends Component {
     return (
       <div className="App">
           <h1 className="App-title">My App</h1>
+          <div className='container'>
         <AddUser
             onAdd={this.onAdd}
         />
+          <h2>Users list</h2>
+              <div className='list'>
           {this.state.name.length > 0 ?
               this.state.name.map(user => {
                   return (
@@ -110,8 +113,10 @@ class App extends Component {
                       />
                   );
               })
-              :  <div className="App">No users</div>
+              :  <h2 className="App">No users</h2>
           }
+              </div>
+          </div>
       </div>
     );
   }

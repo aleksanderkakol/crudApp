@@ -93,28 +93,26 @@ class App extends Component {
 
 
   render() {
+      let userList = this.state.name.map(user => {
+          return (
+              <Users
+                  key={user.name}
+                  {...user}
+                  onDelete={this.onDelete}
+                  onEditSubmit={this.onEditSubmit}
+              />
+          );
+      });
     return (
       <div className="App">
-          <h1 className="App-title">My App</h1>
+          <h1 className="App-title">API User List</h1>
           <div className='container'>
         <AddUser
             onAdd={this.onAdd}
         />
           <h2>Users list</h2>
               <div className='list'>
-          {this.state.name.length > 0 ?
-              this.state.name.map(user => {
-                  return (
-                      <Users
-                          key={user.name}
-                          {...user}
-                          onDelete={this.onDelete}
-                          onEditSubmit={this.onEditSubmit}
-                      />
-                  );
-              })
-              :  <h2 className="App">No users</h2>
-          }
+                  {userList}
               </div>
           </div>
       </div>

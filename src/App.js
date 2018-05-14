@@ -53,7 +53,7 @@ class App extends Component {
   }
 
   onAdd(name, username){
-      fetch('http://localhost:3000/users', {
+       fetch('http://jsonplaceholder.typicode.com/users', {
           method: 'POST',
           headers: {
               'Accept': 'application/json, text/plain, */*',

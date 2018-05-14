@@ -19,7 +19,7 @@ class App extends Component {
   }
 
   componentWillMount(){
-    fetch('http://jsonplaceholder.typicode.com/users')
+    fetch('https://jsonplaceholder.typicode.com/users')
         .then(resp => resp.json())
         .then(resp => this.setState({
                 name: resp
@@ -53,7 +53,7 @@ class App extends Component {
   }
 
   onAdd(name, username){
-       fetch('http://jsonplaceholder.typicode.com/users', {
+       fetch('https://jsonplaceholder.typicode.com/users', {
           method: 'POST',
           headers: {
               'Accept': 'application/json, text/plain, */*',

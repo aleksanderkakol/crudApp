@@ -19,7 +19,7 @@ class App extends Component {
   }
 
   componentWillMount(){
-    fetch('http://localhost:3000/users')
+    fetch('http://jsonplaceholder.typicode.com/users')
         .then(resp => resp.json())
         .then(resp => this.setState({
                 name: resp

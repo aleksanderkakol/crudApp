@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import {combineReducers, createStore, applyMiddleware} from 'redux';
+import {connect, Provider} from 'react-redux';
+
 import './App.css';
 import Users from './Users';
 import AddUser from './AddUser';
@@ -19,7 +23,7 @@ class App extends Component {
   }
 
   componentWillMount(){
-    fetch('https://jsonplaceholder.typicode.com/users')
+    fetch('http://localhost:3000/users')
         .then(resp => resp.json())
         .then(resp => this.setState({
                 name: resp
@@ -53,7 +57,7 @@ class App extends Component {
   }
 
   onAdd(name, username){
-       fetch('https://jsonplaceholder.typicode.com/users', {
+       fetch('http://localhost:3000/users', {
           method: 'POST',
           headers: {
               'Accept': 'application/json, text/plain, */*',

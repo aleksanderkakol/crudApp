@@ -18,7 +18,7 @@ class Users extends Component {
         const {onDelete, name} = this.props;
 
         onDelete(name);
-        fetch(`https://jsonplaceholder.typicode.com/users/${this.props.id}`, {
+        fetch(`http://localhost:3000/users/${this.props.id}`, {
             method: 'DELETE'
         }).then(resp => resp.json());
         // .then(data => console.log(data));
@@ -32,7 +32,7 @@ class Users extends Component {
 
     onEditSubmit(e) {
         e.preventDefault();
-        fetch(`https://jsonplaceholder.typicode.com/users/${this.props.id}`, {
+        fetch(`http://localhost:3000/users/${this.props.id}`, {
             method: 'PUT',
             headers: {
                 'Content-type': 'application/json; charset=UTF-8'
